@@ -1,0 +1,127 @@
+<style>
+  .btn-colored {
+    border-color: #4594D1;
+    background-color: #4594D1;
+    height: 110%;
+  }
+
+  .commented-btn {
+    font-size: 13px;
+    color: #818181;
+  }
+</style>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="card card-primary">
+
+
+          <form id="quickForm">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label>{{fileName}}</label>
+                  </div>
+                </div>
+                <!-- /.col -->
+                <!-- /.col -->
+              </div>
+
+              <table width="100%">
+                <tr>
+                  <td width="30%">
+                    <div class="card">
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0" style="height: 160px;">
+                        <table class="table table-head-fixed text-nowrap">
+                          <thead style="background-color: #4594D1;
+                                                    text-align: center;">
+                            <tr>
+                              <th>Archivos Cargados</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let up of uploaded">
+                              <td>
+                                <div class="row align-items-center">
+                                  <div class="col-auto">
+                                    <button (click)="deleteFiles(up)" class="btn btn-sm btn-default">
+                                      <i class="fas fa-trash"></i>
+                                    </button>
+                                  </div>
+                                  <div class="col-auto"><i class="fas fa-file-alt fa-lg"></i></div>
+                                  <div class="col">{{up}}</div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>
+                    <ngx-dropzone [maxFileSize]="10737418240" (change)="onSelect($event)"
+                      [expandable]="true">
+                      <ngx-dropzone-label>Arrastra el archivo</ngx-dropzone-label>
+                      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                        <ngx-dropzone-label style="width: 170px; font-size: 12px;">
+                          <div style="justify-content: center; font-size: 50px;"><i class="fas fa-file-alt fa-lg"></i>
+                          </div>
+                          {{ f.name }}
+                        </ngx-dropzone-label>
+                      </ngx-dropzone-preview>
+                    </ngx-dropzone>
+                    <!-- <ngx-dropzone [maxFileSize]="10737418240" (change)="onSelect($event)"
+                      [expandable]="true" [disabled]="dropzoneDisable || uploaded.length>0">
+                      <ngx-dropzone-label>Arrastra el archivo</ngx-dropzone-label>
+                      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                        <ngx-dropzone-label style="width: 170px; font-size: 12px;">
+                          <div style="justify-content: center; font-size: 50px;"><i class="fas fa-file-alt fa-lg"></i>
+                          </div>
+                          {{ f.name }}
+                        </ngx-dropzone-label>
+                      </ngx-dropzone-preview>
+                    </ngx-dropzone> -->
+                  </td>
+                </tr>
+              </table>
+
+              <table align="center">
+                <tr>
+                  <br>
+                </tr>
+                <tr>
+                  <td>
+                    <button (click)="onSending()" class="btn btn-primary btn-block btn-colored">
+                      Subir Archivos
+                      <div class="nav-icon fa fa-upload" style="color: #fff"></div>
+                    </button>
+                    <!-- <button (click)="onSending()" class="btn btn-primary btn-block btn-colored" *ngIf="uploaded.length<1">
+                      Subir Archivos
+                      <div class="nav-icon fa fa-upload" style="color: #fff"></div>
+                    </button> -->
+                  </td>
+                  <td>
+                    <button (click)="upload()" class="btn btn-primary btn-block btn-colored">
+                      <div class="nav-icon fas fa-arrow-left" style="color: #fff"></div>
+                    </button>
+                    <!-- <button (click)="upload()" class="btn btn-primary btn-block btn-colored" [disabled]="dropzoneDisable">
+                      <div class="nav-icon fas fa-arrow-left" style="color: #fff" *ngIf="!dropzoneDisable"></div>
+                      <div  *ngIf="dropzoneDisable">Procesando...</div>
+                    </button> -->
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

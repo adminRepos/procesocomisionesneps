@@ -1,0 +1,92 @@
+<style>
+    .btn-colored {
+        border-color: #4594D1;
+        background-color: #4594D1;
+        height: 110%;
+    }
+
+    .commented-btn {
+        font-size: 13px;
+        color: #818181;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+
+
+                    <form id="quickForm">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <table align="center">
+                                    <tr>
+                                        <td>
+                                            <div class="progress-group">
+                                                &nbsp;
+                                                <span class="float-right"><b>{{INDICADOR[progress]}}</b></span>
+                                                <div class="progress progress-sm"
+                                                    style="width: 600px; border-radius: 5px;">
+                                                    <div class="progress-bar bg-primary"
+                                                        [ngStyle]="{'width': INDICADOR[progress]}"
+                                                        style="border-radius: 5px;"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table align="center" style="width: 700px;">
+                                    <td width="150px" align="left">Configuración</td>
+                                    <td width="160px">Carga Masiva</td>
+                                    <td>Preliquidación</td>
+                                    <td>Corrección</td>
+                                    <td width="20px">Liquidación</td>
+                                </table>
+
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="row" style="justify-content: center;">
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <div class="info-box">
+                                        <span class="info-box-icon bg-info elevation-1"><i
+                                                class="fas fa-cog"></i></span>
+
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">Proceso General</span>
+                                            <span class="info-box-number">
+                                                10
+                                                <small>%</small>
+                                            </span>
+                                        </div>
+                                        <!-- /.info-box-content -->
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <div class="info-box">
+                                        <span class="info-box-icon bg-info elevation-1"><i
+                                                class="fa fa-upload"></i></span>
+
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">Carga Masiva</span>
+                                            <span class="info-box-number">
+                                                10
+                                                <small>%</small>
+                                            </span>
+                                        </div>
+                                        <!-- /.info-box-content -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

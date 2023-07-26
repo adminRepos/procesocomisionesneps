@@ -1,0 +1,114 @@
+<style>
+    .btn-colored {
+        border-color: #4594D1;
+        background-color: #4594D1;
+        height: 110%;
+    }
+
+    .commented-btn {
+        font-size: 13px;
+        color: #818181;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                <div class="form-group">
+                                    <form (ngSubmit)="searchUsers()" [formGroup]="searchForm">
+                                        <div class="input-group input-group-lg">
+                                            <input type="search" class="form-control form-control-lg"
+                                                formControlName="idUsuario" placeholder="ID Usuario">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-lg btn-default">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="info-box shadow" *ngFor="let user of user_id">
+                                    <span class="info-box-icon" style="background-color: #4594D1;"><i class="fa fa-user"
+                                            style="color:#fff;"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-number">ID Usuario: {{user.id_usuario}}</span>
+                                        <input type="hidden">
+
+                                        <span class="info-box-number">Asignar Módulo: </span>
+                                        <select class="form-control select2 select2-danger"
+                                            data-dropdown-css-class="select2-danger" style="width: 100%;">
+                                            <option [ngValue]="modulo.lkcd_valor" *ngFor="let modulo of modulos">
+                                                {{modulo.lkcd_valor}}</option>
+                                        </select>
+                                        <span class="info-box-number">Permisos: </span>
+                                        <div class="row">
+                                            <div class="custom-control custom-radio col-2">
+                                                &nbsp;
+                                                <input class="custom-control-input" type="radio" name="customRadio"
+                                                    id="todos" checked>
+                                                <label for="todos" class="custom-control-label">
+                                                    Todos</label>
+                                            </div>
+                                            <div class="custom-control custom-radio col-2">
+                                                <input class="custom-control-input" type="radio" name="customRadio"
+                                                    id="lectura">
+                                                <label for="lectura" class="custom-control-label">
+                                                    Lectura</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <button type="submit" class="btn btn-primary btn-block btn-colored">
+                                                    Asignar Módulo
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.info-box -->
+                            </td>
+                            <td>&nbsp;</td>
+                            <td width="30%">
+                                
+                                <div class="card">
+                                    <!-- /.card-header -->
+                                    <div class="card-body table-responsive p-0" style="height: 280px;">
+                                        <table class="table table-head-fixed text-nowrap">
+                                            <thead style="background-color: #4594D1;
+                                                        text-align: center;">
+                                                <tr>
+                                                    <th>Módulos Asignados</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let module of modulosAsignados">
+                                                    <td>{{module.vsta_titulo}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.col -->
+            </div>
+
+        </div>
+    </div>
+</section>

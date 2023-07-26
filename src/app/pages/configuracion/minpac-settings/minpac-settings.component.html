@@ -1,0 +1,520 @@
+<style>
+    .btn-colored {
+      border-color: #fff;
+      background-color: #fff;
+      height: 110%;
+      color: #000;
+    }
+  
+    .btn-blue-colored {
+      border-color: #4594D1;
+      background-color: #4594D1;
+      height: 110%;
+    }
+  
+    .commented-btn {
+      font-size: 13px;
+      color: #818181;
+    }
+  </style>
+  
+  <div class="title-box">
+    <span> <strong class="tittle-size">2.4 Gestionar Canal Externo Minimo PAC</strong> </span>
+  </div> 
+  
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+  
+        <div class="col-md-12">
+          <div class="card card-primary">
+  
+            <div class="card-body">
+              <form>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                  <h5> <strong>RANGO DE COTIZANTES</strong> </h5>
+                  <br>
+                </div>
+                <br>
+                <table style="width: 100%;">
+                  <tr>
+                    <td>
+                      <div class="info-box shadow" style="height: 280px;">
+                        <span class="info-box-icon" style="background-color: #4594D1;"><i class="fas fa-sitemap"
+                            style="color:#fff;"></i></span>
+  
+                        <div class="info-box-content" id="content-info-box">
+                          <table>
+                            <tr>
+                              <td>
+                                <strong>Desde: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input type="doc" formControlName="doc" class="form-control" id="doc"
+                                  placeholder="Inicio de Rango" required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Hasta: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input type="doc" formControlName="doc" class="form-control" id="doc"
+                                  placeholder="Fin de Rango" required>
+                              </td>
+                            </tr>
+                            <br>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Mayor o Igual: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <br>
+                            <tr>
+                              <td colspan="2">
+                                <table align="center">
+                                  <tr>
+                                    <td>
+                                      <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                        Guardar
+                                        <div class="nav-icon fas fa-save"></div>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td width="60%">
+                      <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 280px;">
+                          <table class="table table-head-fixed text-nowrap">
+                            <thead style="background-color: #4594D1;
+                                                                      text-align: center;">
+                              <tr>
+                                <th>Rangos</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <!-- <tr *ngFor="let dependencia of dependencias"> -->
+  
+                                <td>
+                                  <!-- {{dependencia.lkcd_valor}} -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                  <h5> <strong>PANEL PRIORIZADO</strong> </h5>
+                  <br>
+                </div>
+                <br>
+                <table style="width: 100%;">
+                  <tr>
+                    <td>
+                      <div class="info-box shadow" >
+                        <span class="info-box-icon" style="background-color: #4594D1;"><i class="far fa-address-card"
+                            style="color:#fff;"></i></span>
+  
+                        <div class="info-box-content">
+                          <table>
+                            <tr>
+                              <td width="40%">
+                                <strong>Rangos: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <select class="custom-select form-control-border border-select" formControlName="perfil" id="perfil"
+                                  required>
+                                  <option>
+                                    <!-- <option [ngValue]="dependencia.lkcd_valor" *ngFor="let dependencia of dependencias"> -->
+                                    <!-- {{dependencia.lkcd_valor}}</option> -->
+                                  </option>
+                                </select>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>
+                                <strong>Cotizante: </strong> &nbsp;
+                                <span class="metapac-campo-monedas space1"></span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Beneficiario: </strong> &nbsp;
+                                <span class="metapac-campo-monedas space2"> </span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado 29 o 30 días: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado 30 días: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado 60 días: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado de Acuerdo Tipo Cotizante: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <br>
+                            <tr>
+                              <td colspan="2">
+                                <table align="center">
+                                  <tr>
+                                    <td>
+                                      <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                        Guardar
+                                        <div class="nav-icon fas fa-save"></div>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td width="60%">
+                      <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 280px;">
+                          <table class="table table-head-fixed text-nowrap">
+                            <thead style="background-color: #013c6a; text-align: center;">
+                              <tr>
+                                <th>Perfiles con Priorizacion</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <!-- <tr *ngFor="let perfil of perfiles"> -->
+  
+                                <td>
+                                  <!-- {{perfil.lkcd_valor}} -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                  <h5> <strong>OTRAS EMPRESAS DEL PANEL, INDEPENDIENTES Y PENSIONADOS DEL MERCADO FOCO  </strong> </h5>
+                  <br>
+                </div>
+                <br>
+                <table style="width: 100%;">
+                  <tr>
+                    <td>
+                      <div class="info-box shadow" >
+                        <span class="info-box-icon" style="background-color: #4594D1;"><i class="far fa-address-card"
+                            style="color:#fff;"></i></span>
+  
+                        <div class="info-box-content">
+                          <table>
+                            <tr>
+                              <td width="40%">
+                                <strong>Rangos: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <select class="custom-select form-control-border border-select" formControlName="perfil" id="perfil"
+                                  required>
+                                  <option>
+                                    <!-- <option [ngValue]="dependencia.lkcd_valor" *ngFor="let dependencia of dependencias"> -->
+                                    <!-- {{dependencia.lkcd_valor}}</option> -->
+                                  </option>
+                                </select>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>
+                                <strong>Cotizante Dependiente: </strong> &nbsp;
+                                <span class="metapac-campo-monedas space1"></span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Cotizante Independiente: </strong> &nbsp;
+                                <span class="metapac-campo-monedas space1"></span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Cotizante Pensionado: </strong> &nbsp;
+                                <span class="metapac-campo-monedas space2"> </span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Beneficiario: </strong> &nbsp;
+                                <span class="metapac-campo-monedas space2"> </span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado 29 o 30 días: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado 30 días: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado 60 días: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Compensado de Acuerdo Tipo Cotizante: </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <br>
+                            <tr>
+                              <td colspan="2">
+                                <table align="center">
+                                  <tr>
+                                    <td>
+                                      <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                        Guardar
+                                        <div class="nav-icon fas fa-save"></div>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td width="60%">
+                      <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 280px;">
+                          <table class="table table-head-fixed text-nowrap">
+                            <thead style="background-color: #4594D1;
+                                                                      text-align: center;">
+                              <tr>
+                                <th>Lista de Otras Empresas</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <!-- <tr *ngFor="let perfil of perfiles"> -->
+  
+                                <td>
+                                  <!-- {{perfil.lkcd_valor}} -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <div style="display: flex; justify-content: center;">
+                  <h5> <strong>NOVEDADES</strong> </h5>
+                  <br>
+                </div>
+                <br>
+                <table class="table-novedades" style="width: 40%;">
+                  <tr>
+                    <td>
+                      <div class="info-box shadow">
+                        <span class="info-box-icon" style="background-color: #ffffff;">
+                          <i class="far fa-address-card" style="color:#fff;"></i>
+                        </span>
+                        <div class="info-box-content">
+                          <table>
+                            <tr class="content-box-up">
+                              <td class="metapac-than-equal">
+                                <strong></strong> &nbsp;
+                              </td>
+                            </tr>
+                            <tr class="content-box-up">
+                              <td class="metapac-than-equal">
+                                <strong>Todas</strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr class="content-box-up">
+                              <td class="metapac-than-equal">
+                                <strong>Cambio de Empleador </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Reingresos </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Cambio Tipo Trabajador </strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Cambio Beneficiario a Cotizante</strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="metapac-than-equal">
+                                <strong>Movilidad al Contributivo</strong> &nbsp;
+                              </td>
+                              <td>
+                                <input class="metapac-checkbox" type="checkbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Valor </strong> &nbsp;
+                                <span class="metapac-campo-monedas space2"> </span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <strong>Cotizantes Pensionados </strong> &nbsp;
+                                <span class="metapac-campo-monedas space2"> </span>
+                              </td>
+                              <td>
+                                <input type="number" formControlName="doc" class="form-control" id="doc" placeholder="$ 0"
+                                  required>
+                              </td>
+                            </tr>
+                            <tr>
+                              <br>
+                            <tr>
+                              <td colspan="2">
+                                <table align="center">
+                                  <tr>
+                                    <td>
+                                      <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                        Guardar
+                                        <div class="nav-icon fas fa-save"></div>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <span class="info-box-icon" style="background-color: #ffffff;">
+                          <i class="far fa-address-card" style="color:#fff;"></i>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,106 @@
+<style>
+  .btn-colored {
+    border-color: #4594D1;
+    background-color: #4594D1;
+    height: 110%;
+  }
+
+  .commented-btn {
+    font-size: 13px;
+    color: #818181;
+  }
+</style>
+<section class="content">
+  <div class="container-fluid">
+    <div *ngIf="isPreliquidationInProces">
+
+      <div class="card card-default card collapsed-card" *ngFor="let fileT of carga">
+        <div class="card-header">
+          <h3 class="card-title"><strong>{{fileT.crga_nombre_archivo}}</strong></h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="card-tools mr-5 d-flex align-items-center justify-content-between" *ngIf="files[fileT.crga_nombre_archivo]">
+
+              <div class="d-flex align-items-center justify-content-between w-100" *ngIf="files[fileT.crga_nombre_archivo].length>0">
+                <strong *ngIf="files[fileT.crga_nombre_archivo].length>0" class="mr-3">
+                  archivos precargados:
+                </strong>
+
+                <strong>
+                  {{files[fileT.crga_nombre_archivo].length}}
+                  <i class="fas fa-file"></i>
+                </strong>
+              </div>
+
+          </div>
+
+          <div class="card-tools mr-5 d-flex align-items-center justify-content-between" *ngIf="uploaded[fileT.crga_nombre_archivo]">
+
+            <div class="d-flex align-items-center justify-content-between w-100" *ngIf="uploaded[fileT.crga_nombre_archivo].length>0">
+              <strong *ngIf="uploaded[fileT.crga_nombre_archivo].length>0" class="mr-3">
+                archivos cargados:
+              </strong>
+
+              <strong>
+                {{uploaded[fileT.crga_nombre_archivo].length}}
+                <i class="fas fa-file"></i>
+              </strong>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body" style="display: none;">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Responsable: </label>
+                <p> {{fileT.id_usuario != null && fileT.id_usuario.length > 0? fileT.id_usuario: 'Sin Asignar'}} </p>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-6">
+              <div class="form-group">
+                <label>Requerido:</label>
+                <p> {{fileT.crga_requerido != null && fileT.crga_requerido.length > 0? fileT.crga_requerido: 'Sin Asignar'}} </p>
+              </div>
+            </div>
+            <!-- /.col -->
+          </div>
+
+          <!-- /.row -->
+          <table align="center">
+            <tr>
+              <br>
+            </tr>
+            <tr>
+              <button (click)="uploadFiles(fileT.crga_nombre_archivo)" class="btn btn-primary btn-block btn-colored">
+                Cargar Archivos
+                <div class="nav-icon fa fa-upload" style="color: #fff"></div>
+              </button>
+            </tr>
+          </table>
+        </div>
+
+
+        <!-- /.card-body -->
+      </div>
+
+    </div>
+
+    <div class="row" style="justify-content: center;">
+      <div class="col-3">
+      <button (click)="startProcessing()" class="btn btn-primary btn-block btn-colored" [disabled]="!isPreliquidationInProces">
+        {{isPreliquidationInProces?"Generar Preliquidación":"Generarndo Preliquidación..."}}
+        <div class="nav-icon fa fa-spinner" style="color: #fff"></div>
+      </button>
+    </div>
+    </div>
+  </div>
+  <br>
+</section>

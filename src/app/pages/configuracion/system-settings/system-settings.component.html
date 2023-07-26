@@ -1,0 +1,406 @@
+<style>
+  .btn-colored {
+    border-color: #fff;
+    background-color: #fff;
+    height: 110%;
+    color: #000;
+  }
+
+  .btn-blue-colored {
+    border-color: #4594D1;
+    background-color: #4594D1;
+    height: 110%;
+  }
+
+  .commented-btn {
+    font-size: 13px;
+    color: #818181;
+  }
+</style>
+<section class="content">
+  <form (ngSubmit)="settings()" [formGroup]="systemSettings">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card card-primary">
+
+            <div class="card-body">
+              <div style="display: flex; justify-content: center;">
+                <h5> <strong>GENERAL</strong> </h5>
+                <br>
+              </div>
+              <table align="center">
+                <tr>
+                  <td width="20%"><label>Días del Proceso</label></td>
+                  <td width="20%"><label>Generar Alerta Vencimiento</label></td>
+                  <td width="20%"><label>Presupuesto</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="idUsuario" formControlName="cfgr_dias_proceso" class="form-control" id="idUsuario"
+                      placeholder="Dias Proceso" required>
+                  </td>
+                  <td>
+                    <input type="nombre" formControlName="cfgr_alerta_vencimiento" class="form-control" id="nombre"
+                      placeholder="Dias para Alertar" required>
+                  </td>
+                  <td>
+                    <input type="email" formControlName="cfgr_presupuesto" class="form-control" id="email"
+                      placeholder="Presupuesto" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3"><br></td>
+                </tr>
+                <tr>
+                  <td width="20%"><label>Minimo PAC</label></td>
+                  <td width="20%"><label>% Meta PAC</label></td>
+                  <td width="20%"><label></label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="celular" formControlName="cfgr_minimo_pac" class="form-control" id="celular"
+                      placeholder="Minimo PAC" required>
+                  </td>
+                  <td>
+                    <input type="doc" formControlName="cfgr_meta_pac" class="form-control" id="doc"
+                      placeholder="% Meta PAC" required>
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3"><br></td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-12">
+                <div style="display: flex; justify-content: center;">
+                  <h5> <strong>CONTROLES</strong> </h5>
+                  <br>
+                </div>
+                <div class="container-fluid">
+                  <div class="row align-items-center justify-content-around">
+                    <div class="col-3">Inabilitar Usuario con Meses de Inactividad</div>
+                    <div class="col-1">
+                      <input type="doc" formControlName="cfgr_inactividad_usuario" class="form-control" id="doc"
+                        placeholder="Meses" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row" style="justify-content: center;">
+              <div class="col-3">
+                <button type="submit" class="btn btn-primary btn-block btn-blue-colored"
+                  [disabled]="systemSettings.invalid">
+                  Configurar
+                  <div class="nav-icon fa fa-cogs" style="color: #fff"></div>
+                </button>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="card card-primary">
+
+          <div class="card-body">
+            <form>
+              <div style="display: flex; justify-content: center;">
+                <h5> <strong>CARGA MASIVA</strong> </h5>
+                <br>
+              </div>
+              <table style="width: 100%;">
+                <tr>
+                  <td>
+                    <div class="info-box shadow" style="height: 280px;">
+                      <span class="info-box-icon" style="background-color: #4594D1;"><i class="fa fa-upload"
+                          style="color:#fff;"></i></span>
+
+                      <div class="info-box-content">
+                        <table>
+                          <tr>
+                            <td width="40%">
+                              <strong>Archivo de Carga: </strong> &nbsp;
+                            </td>
+                            <td>
+                              <select class="custom-select form-control-border" formControlName="perfil" id="perfil"
+                                required>
+                                <option [ngValue]="fileType.crga_nombre_archivo" *ngFor="let fileType of carga">
+                                  {{fileType.crga_nombre_archivo}}</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>Responsable: </strong> &nbsp;
+                            </td>
+                            <td>
+                              <input type="doc" formControlName="doc" class="form-control" id="doc"
+                                placeholder="ID Usuario" required>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>Alerta Días Habiles: </strong> &nbsp;
+                            </td>
+                            <td>
+                              <input type="doc" formControlName="doc" class="form-control" id="doc"
+                                placeholder="Alerta Días Habiles" required>
+                            </td>
+                          </tr>
+                          <br>
+                          <tr>
+                            <td colspan="2">
+                              <table align="center">
+                                <tr>
+                                  <td>
+                                    <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                      Asignar Responsable
+                                      <div class="nav-icon fa fa-user"></div>
+                                    </button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td width="60%">
+                    <div class="card">
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0" style="height: 280px;">
+                        <table class="table table-head-fixed text-nowrap">
+                          <thead style="background-color: #4594D1;
+                                                                text-align: center;">
+                            <tr>
+                              <th>Archivos de Carga Masiva</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let fileType of carga">
+
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <strong> Archivo: </strong>
+                                    </div>
+                                    <div class="col">
+                                      <strong> Responsable: </strong>
+                                    </div>
+                                    <div class="col">
+                                      <strong> Alerta: </strong>
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class="col-6">
+                                      {{fileType.crga_nombre_archivo}}
+                                    </div>
+                                    <div class="col">
+                                      {{fileType.id_usuario != null && fileType.id_usuario.length > 0?
+                                      fileType.id_usuario: 'Sin Asignar'}}
+                                    </div>
+                                    <div class="col">
+                                      {{fileType.crga_alerta != null && fileType.crga_alerta.length > 0?
+                                      fileType.crga_alerta: 'Sin Asignar'}}
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="card card-primary">
+
+          <div class="card-body">
+            <form>
+              <div style="display: flex; justify-content: center;">
+                <h5> <strong>ADMINISTRACIÓN DE USUARIOS</strong> </h5>
+                <br>
+              </div>
+              <table style="width: 100%;">
+                <tr>
+                  <td>
+                    <div class="info-box shadow" style="height: 280px;">
+                      <span class="info-box-icon" style="background-color: #4594D1;"><i class="fas fa-sitemap"
+                          style="color:#fff;"></i></span>
+
+                      <div class="info-box-content">
+                        <table>
+                          <tr>
+                            <td>
+                              <strong>Dependencia: </strong> &nbsp;
+                            </td>
+                            <td>
+                              <input type="doc" formControlName="doc" class="form-control" id="doc"
+                                placeholder="Dependencia" required>
+                            </td>
+                          </tr>
+                          <br>
+                          <tr>
+                            <td colspan="2">
+                              <table align="center">
+                                <tr>
+                                  <td>
+                                    <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                      Guardar
+                                      <div class="nav-icon fas fa-save"></div>
+                                    </button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td width="60%">
+                    <div class="card">
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0" style="height: 280px;">
+                        <table class="table table-head-fixed text-nowrap">
+                          <thead style="background-color: #4594D1;
+                                                                text-align: center;">
+                            <tr>
+                              <th>Dependencia</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let dependencia of dependencias">
+
+                              <td>
+                                {{dependencia.lkcd_valor}}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <br>
+              <table style="width: 100%;">
+                <tr>
+                  <td>
+                    <div class="info-box shadow" style="height: 280px;">
+                      <span class="info-box-icon" style="background-color: #4594D1;"><i class="far fa-address-card"
+                          style="color:#fff;"></i></span>
+
+                      <div class="info-box-content">
+                        <table>
+                          <tr>
+                            <td width="40%">
+                              <strong>Dependencia: </strong> &nbsp;
+                            </td>
+                            <td>
+                              <select class="custom-select form-control-border" formControlName="perfil" id="perfil"
+                                required>
+                                <option [ngValue]="dependencia.lkcd_valor" *ngFor="let dependencia of dependencias">
+                                  {{dependencia.lkcd_valor}}</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>Perfil: </strong> &nbsp;
+                            </td>
+                            <td>
+                              <input type="doc" formControlName="doc" class="form-control" id="doc" placeholder="Perfil"
+                                required>
+                            </td>
+                          </tr>
+                          <tr>
+                            <br>
+                          <tr>
+                            <td colspan="2">
+                              <table align="center">
+                                <tr>
+                                  <td>
+                                    <button type="submit" class="btn btn-primary btn-block btn-blue-colored">
+                                      Guardar
+                                      <div class="nav-icon fas fa-save"></div>
+                                    </button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td width="60%">
+                    <div class="card">
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive p-0" style="height: 280px;">
+                        <table class="table table-head-fixed text-nowrap">
+                          <thead style="background-color: #4594D1;
+                                                                text-align: center;">
+                            <tr>
+                              <th>Perfiles</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let perfil of perfiles">
+
+                              <td>
+                                {{perfil.lkcd_valor}}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

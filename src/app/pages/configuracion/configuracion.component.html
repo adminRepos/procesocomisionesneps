@@ -1,0 +1,112 @@
+<style>
+    .btn-colored {
+        border-color: #4594D1;
+        background-color: #4594D1;
+        height: 110%;
+    }
+
+    .commented-btn {
+        font-size: 13px;
+        color: #818181;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+
+
+                    <form id="quickForm">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="userAdmin">1. Configuración General</label>
+                                <p class="commented-btn"> Configura las variables generales del sistema.</p>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <button (click)="routeSettings('system')" class="btn btn-primary btn-block btn-colored">
+                                            Gestionar Sistema
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="userAdmin">2. Configuración Reglas de Negocio</label>
+                                        <p class="commented-btn"> Configura la regla de negocio para el proceso actual.</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button (click)="routeSettings('metapac')" class="btn btn-primary btn-block btn-colored">
+                                                    Gestionar Canal Interno Meta PAC
+                                                </button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button (click)="routeSettings('minpac')" class="btn btn-primary btn-block btn-colored">
+                                                    Gestionar Canal Externo Minimo PAC
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button (click)="routeSettings('nometapac')" class="btn btn-primary btn-block btn-colored" nowrap>
+                                                    Gestionar Canal Interno No Meta PAC
+                                                </button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button (click)="routeSettings('nominpac')" class="btn btn-primary btn-block btn-colored" nowrap>
+                                                    Gestionar Canal Externo No Minimo PAC
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button (click)="routeSettings('dir')" class="btn btn-primary btn-block btn-colored">
+                                                    Gestionar Directores
+                                                </button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button (click)="routeSettings('eje')" class="btn btn-primary btn-block btn-colored">
+                                                    Gestionar Ejecutivos
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="userAdmin">3. Historial de Configuraciones</label>
+                                <p class="commented-btn"> Observa las configuraciones realizadas.</p>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <button (click)="routeSettings('history')" class="btn btn-primary btn-block btn-colored">
+                                            Historial de Configuración
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

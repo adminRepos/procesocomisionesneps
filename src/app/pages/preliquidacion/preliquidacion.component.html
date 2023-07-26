@@ -1,0 +1,377 @@
+<style>
+    .links-colored {
+        color: #fff;
+    }
+
+    .background-colored {
+        background-color: #E52629;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    .btn-colored {
+        border-color: #4594D1;
+        background-color: #4594D1;
+        height: 110%;
+    }
+
+    .header-colored {
+        background-color: #4594D1;
+        color: #fff;
+        text-align: center;
+    }
+
+    .centered-table {
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+    }
+</style>
+<div class="card-header p-0 pt-1 border-bottom-0">
+    <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li class="nav-item background-colored">
+            <a class="nav-link links-colored" id="custom-tabs-three-home-tab" data-toggle="pill"
+                href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home"
+                aria-selected="true">Preliquidación</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li class="nav-item background-colored">
+            <a class="nav-link active links-colored" id="custom-tabs-three-liquidacion-tab" data-toggle="pill"
+                href="#custom-tabs-three-liquidacion" role="tab" aria-controls="custom-tabs-three-liquidacion"
+                aria-selected="false">Enviar Preliquidación Asesores</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li class="nav-item background-colored">
+            <a class="nav-link links-colored" id="custom-tabs-three-profile-tab" data-toggle="pill"
+                href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile"
+                aria-selected="false">Consultar Asesor</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li class="nav-item background-colored">
+            <a class="nav-link links-colored" id="custom-tabs-three-messages-tab" data-toggle="pill"
+                href="#custom-tabs-three-messages" role="tab" aria-controls="custom-tabs-three-messages"
+                aria-selected="false">Enviar Preliquidación Directores</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li class="nav-item background-colored">
+            <a class="nav-link links-colored" id="custom-tabs-three-settings-tab" data-toggle="pill"
+                href="#custom-tabs-three-settings" role="tab" aria-controls="custom-tabs-three-settings"
+                aria-selected="false">Enviar Preliquidación Ejecutivos</a>
+        </li>
+    </ul>
+</div>
+<div class="card-body">
+    <div class="tab-content" id="custom-tabs-three-tabContent">
+        <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel"
+            aria-labelledby="custom-tabs-three-home-tab">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo Documento</th>
+                                        <th>Documento Identidad</th>
+                                        <th>Nombre Asesor Comercial</th>
+                                        <th>Regional</th>
+                                        <th>Oficina Base</th>
+                                        <th>Cargo</th>
+                                        <th>Total Liquidado</th>
+                                        <th>Clave Asesor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Sandra Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Asesor Comercial</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Andrea Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Director</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Sandra Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Ejecutivo</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Andrea Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Director</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary btn-block btn-colored">
+                                    Aceptar Preliquidación
+                                    
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary btn-block btn-colored">
+                                    Declinar
+                                    
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="custom-tabs-three-liquidacion" role="tabpanel"
+            aria-labelledby="custom-tabs-three-liquidacion-tab">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo Documento</th>
+                                        <th>Documento Identidad</th>
+                                        <th>Nombre Asesor Comercial</th>
+                                        <th>Regional</th>
+                                        <th>Oficina Base</th>
+                                        <th>Cargo</th>
+                                        <th>Total Liquidado</th>
+                                        <th>Clave Asesor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Sandra Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Asesor Comercial</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Andrea Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Asesor Comercial</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="custom-tabs-three-profile" role="tabpanel"
+            aria-labelledby="custom-tabs-three-profile-tab">
+            <div class="row">
+
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <input type="search" class="form-control form-control-lg" placeholder="Clave Asesor">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-lg btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo Documento</th>
+                                        <th>Documento Identidad</th>
+                                        <th>Nombre Asesor Comercial</th>
+                                        <th>Regional</th>
+                                        <th>Oficina Base</th>
+                                        <th>Cargo</th>
+                                        <th>Total Liquidado</th>
+                                        <th>Clave Asesor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Sandra Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Asesor Comercial</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Andrea Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Asesor Comercial</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="custom-tabs-three-messages" role="tabpanel"
+            aria-labelledby="custom-tabs-three-messages-tab">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo Documento</th>
+                                        <th>Documento Identidad</th>
+                                        <th>Nombre Asesor Comercial</th>
+                                        <th>Regional</th>
+                                        <th>Oficina Base</th>
+                                        <th>Cargo</th>
+                                        <th>Total Liquidado</th>
+                                        <th>Clave Asesor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Sandra Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Director</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Andrea Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Director</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="custom-tabs-three-settings" role="tabpanel"
+            aria-labelledby="custom-tabs-three-settings-tab">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo Documento</th>
+                                        <th>Documento Identidad</th>
+                                        <th>Nombre Asesor Comercial</th>
+                                        <th>Regional</th>
+                                        <th>Oficina Base</th>
+                                        <th>Cargo</th>
+                                        <th>Total Liquidado</th>
+                                        <th>Clave Asesor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Sandra Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Ejecutivo</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CC</td>
+                                        <td>102566522</td>
+                                        <td>Andrea Bravo Quiceno</td>
+                                        <td>NorOccidente</td>
+                                        <td>Rionegro</td>
+                                        <td>Ejecutivo</td>
+                                        <td>$ 12.824.521</td>
+                                        <td>A982</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </div>

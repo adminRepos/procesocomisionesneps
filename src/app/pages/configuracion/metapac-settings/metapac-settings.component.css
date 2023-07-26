@@ -1,0 +1,79 @@
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #ced4da;
+}
+
+.metapac-than-equal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.metapac-campo-monedas {
+  position: relative;
+  display: inline-block;
+  /* margin-left: 1.3rem; */
+}
+
+.metapac-campo-monedas::before {
+  content: ''; /* Símbolo de moneda, en este caso el signo de pesos ($) */
+  color: #ced4da; /* Color del símbolo de moneda */
+  pointer-events: none; /* Evita que se pueda seleccionar el símbolo de moneda */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.campo-monedas {
+  position: relative;
+}
+
+.td-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.space1 {
+  margin-left: 1.7rem;
+}
+
+.space2 {
+  margin-left: 0.2rem;
+}
+
+.border-select {
+  border: 1px solid #ced4da;
+  padding: 5px;
+}
+
+.content-info-box {
+  max-height: 300px;
+}
+
+.content-box-card {
+  height: 500px;
+}
+
+.content-box-up {
+  margin-top: 1rem;
+}
+
+.table-novedades {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  
+.title-box {
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.tittle-size {
+  font-size: 25px;
+}
+

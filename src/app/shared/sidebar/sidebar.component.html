@@ -1,0 +1,67 @@
+ <!-- Main Sidebar Container -->
+ <style>
+  .sidebar-dark-blue{
+    background: #4594D1 !important;
+  }
+  .logo-sized{
+    width: 80px;
+  }
+  .brand-centered{
+    text-align: center !important;
+  }
+  .white-colored{
+    color: #fff;
+  }
+  .align-centered{
+    text-align: center!important;
+  }
+  .background-colored{
+    background-color: #E52629;
+    border-radius: 5px;
+  }
+  .border-colored{
+    border-color: #4594D1 !important;
+  }
+
+</style>
+ <aside class="main-sidebar sidebar-dark-blue elevation-4">
+    <!-- Brand Logo -->
+    <a  class="brand-link brand-centered border-colored">
+      <img src="./assets/dist/img/neps-logo-v.png" alt="AdminLTE Logo" class="brand-image">
+      <div class="brand-text font-weight-light brand-centered">
+        <img src="./assets/dist/img/neps-logo.png" alt="AdminLTE Logo" class="logo-sized brand-centered">
+      </div>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item" *ngFor="let item of menuItems">
+            <a [routerLink]="item.vsta_url" class="nav-link">
+              <i class="{{item.vsta_icono}} white-colored"></i>
+              <p class="ml-2 white-colored align-centered">
+                {{item.vsta_titulo}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item background-colored">
+            <a class="nav-link" style="cursor: pointer;" (click)="logout()">
+              <i class="nav-icon fas fa-sign-out-alt white-colored"></i>
+              <p class="ml-2 white-colored">
+                Logout
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

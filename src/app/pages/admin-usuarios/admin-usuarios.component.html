@@ -1,0 +1,98 @@
+<style>
+    .btn-colored {
+        border-color: #4594D1;
+        background-color: #4594D1;
+        height: 110%;
+    }
+
+    .commented-btn {
+        font-size: 13px;
+        color: #818181;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card card-primary">
+
+
+                    <form id="quickForm">
+                        <div class="card-body">
+
+                            <div class="row">
+                              <div class="col-6">
+                                <div class="form-group">
+                                  <label for="userAdmin">1. Creación de usuarios</label>
+                                  <p class="commented-btn"> Crea, gestiona y administra tus usuarios.</p>
+                                  <div class="row">
+                                      <div class="col-6">
+                                          <button (click)="gestionarUsarios()"  class="btn btn-primary btn-block btn-colored">
+                                              Gestionar Usuarios
+                                              <div class="nav-icon far fa-user" style="color: #fff"></div>
+                                          </button>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-6" *ngIf="ID=='admin.neps'">
+                                <div class="form-group">
+                                  <label for="userAdmin">Reiniciar Preliquidación</label>
+                                  <p class="commented-btn">Reinicia la preliquidación del mes.</p>
+                                  <div class="row">
+                                      <div class="col-6">
+                                          <button (click)="restartPreliquidation()"  class="btn btn-primary btn-block btn-colored">
+                                              Reiniciar Preliquidación
+                                          </button>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <br>
+                            <br>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="userAdmin">2. Gestionar Permisos</label>
+                                        <p class="commented-btn"> Administra los permisos de tus usuarios.</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button (click)="gestionarPermisos()" class="btn btn-primary btn-block btn-colored">
+                                                    Gestionar Permisos
+                                                    <div class="nav-icon fas fa-user-lock" style="color: #fff"></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="userAdmin">3. Historial de Cambios</label>
+                                        <p class="commented-btn"> Encuentra todos los movimientos de tus usuarios.</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button (click)="history()" class="btn btn-primary btn-block btn-colored">
+                                                    Historial de Cambios
+                                                    <div class="nav-icon fas fa-history" style="color: #fff"></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
